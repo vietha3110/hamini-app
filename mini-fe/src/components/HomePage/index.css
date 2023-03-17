@@ -1,0 +1,62 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-title {
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-creation {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+
+.homepage-creation > button {
+    width: 100px;
+    height:30px;
+    border: none;
+    background-color: #36d;
+    color: #f5f5f5;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.homepage-lists {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.homepage-lists-detail {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    align-items: center;
+    
+}
+
+.task-name {
+    width: 80px;
+    height:20px
+}
+.task-priority{
+    width: 50px;
+    height:20px
+}
+.homepage-lists-detail > input {
+    border: 1px solid #cccccc;
+    width: 20px;
+    height: 20px;
+}
+
+#task-done {
+    background-color: green;
+    border: none;
+}

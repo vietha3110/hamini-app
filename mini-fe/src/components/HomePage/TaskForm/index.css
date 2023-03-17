@@ -1,0 +1,66 @@
+.tasks-form {
+    width: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow:  0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+    border-radius: 3px;
+}
+
+.tasks-form-name, .tasks-form-priority{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.tasks-form-name > label, .tasks-form-priority > label {
+    margin-bottom: 10px;
+}
+
+.tasks-form-name > input {
+    border: 1px solid #cccccc;
+    height: 10px;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.tasks-form-name > input:focus {
+    border: 2px solid #36d;
+    overflow: hidden;
+}
+
+.tasks-form-priority > select {
+    height: 35px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    padding: 4px 12px;
+}
+.tasks-form-priority > select:focus {
+    border: 2px solid #36d;   
+}
+
+.tasks-form-button {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: space-around;
+}
+
+.tasks-form-button > button {
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-create {
+    background-color: #36d;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-close {
+    background-color: rgba(0, 0 ,0 ,0.08);
+    color: #cccccc;
+}
