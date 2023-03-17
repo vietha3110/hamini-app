@@ -1,11 +1,24 @@
 import './index.css';
 import TaskForm from './TaskForm';
-import { useState } from 'react';
+import {useEffect, useState } from 'react';
 
 
 const HomePage = () => {
     const [showTaskForm, setShowTaskForm] = useState(false);
     const [checked, setChecked] = useState({});
+    const [greeting, setGreeting] = useState('Hello');
+    useEffect(() => {
+        const today = new Date();
+        const hour = today.getHours();
+        if (hour >= 5 && hour < 12) {
+            setGreeting('Good morning');
+        } else if (hour >= 12 && hour <= 18) {
+            setGreeting('Good afternoon');
+        } else {
+            setGreeting('Good evening');
+        }
+    }, [])
+    
     const btnClick = () => {
         setShowTaskForm(!showTaskForm);
     }
@@ -22,11 +35,15 @@ const HomePage = () => {
         <div className="homepage">
             <div className="homepage-title">
                 <h1>
-                   Hello Ha!
+                   {greeting}, Ha!
                 </h1>
             </div>
             <div className='homepage-creation'>
-                <button onClick={btnClick}>New Task</button>
+                {
+                    !showTaskForm && 
+                    <button onClick={btnClick}>New Task</button>
+                }
+               
                 {
                     showTaskForm && 
                     <TaskForm onClose={() => setShowTaskForm(false)} />
@@ -35,7 +52,7 @@ const HomePage = () => {
             <div className='homepage-lists'>
                 <div className='homepage-lists-title'>
                     <h1>
-                         Todo List
+                        Things to do
                     </h1>
                 </div>
                 {
