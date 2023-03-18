@@ -19,6 +19,7 @@ const TaskForm = ({onClose}) => {
     }
     
     const createNewTask = () => {
+        console.log(typeof time);
         setNameErr('');
         if (taskName.trim() === "" || taskName.length > 255) {
             return setNameErr("Name must be 1 - 255 characters.");

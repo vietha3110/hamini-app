@@ -1,7 +1,7 @@
 import './index.css';
 import TaskForm from './TaskForm';
 import {useEffect, useState } from 'react';
-
+import Calendar from './TaskForm/Calendar';
 
 const HomePage = () => {
     const [showTaskForm, setShowTaskForm] = useState(false);
@@ -69,6 +69,9 @@ const HomePage = () => {
                     ))
                 
                 }
+            </div>
+            <div className='homepage-lists'>
+                <Calendar/>
             </div>
         </div>
     )

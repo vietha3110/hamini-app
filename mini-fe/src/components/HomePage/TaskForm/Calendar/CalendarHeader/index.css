@@ -1,0 +1,31 @@
+.calendar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.calendar-header > button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    cursor: pointer;
+}
+
+.calendar-time {
+    font-weight:600;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-time-month {
+    width: 50px;
+    text-align: center;
+}
