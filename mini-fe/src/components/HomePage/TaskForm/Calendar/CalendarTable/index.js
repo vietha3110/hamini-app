@@ -22,7 +22,7 @@ const CalendarTable = ({date}) => {
         daysPrevMonth[i] = formatedDate;
         prevDate.setDate(prevDate.getDate() - 1);
     }
-    const nextDivs = 6 - daysInMonth[daysInMonth.length - 1][0];
+    const nextDivs = 42 - preDivs - daysInMonth.length;
     const nextDate = new Date(date.getFullYear(), date.getMonth() + 1, 1);
     const daysNextMonth = [];
     for (let i = 0; i < nextDivs; i++) {
@@ -35,7 +35,7 @@ const CalendarTable = ({date}) => {
         <div className='calendar-table'>
             <div className='calendar-table-day'>
                 {daysOfWeek.map(day => (
-                    <div key={day} className='test'>
+                    <div key={day} className='calendar-div-date'>
                         <span>{day}</span>
                     </div>
                 ))}
@@ -43,20 +43,20 @@ const CalendarTable = ({date}) => {
             <div className='calendar-table-date'>
                 {daysPrevMonth?.length > 0 && 
                     daysPrevMonth.map(day => (
-                        <div key={day[1]} className='test'>
-                            {day[1]}
+                        <div key={day[1]} className='calendar-table-prevdate calendar-div-date'>
+                            <div>{day[1]}</div>
                         </div>
                     ))
                 }
                 {daysInMonth.map(day => (
-                    <div key={day[1]} className='test'>
-                        {day[1]}
+                    <div key={day[1]} className='calendar-table-currdate calendar-div-date'>
+                        <div>{day[1]}</div>
                     </div>
                 ))}
                 {daysNextMonth?.length > 0 && 
                     daysNextMonth.map(day => (
-                        <div key={day[1]} className='test'>
-                            {day[1]}
+                        <div key={day[1]} className='calendar-table-nextdate calendar-div-date'>
+                            <div>{day[1]}</div>
                         </div>
                     ))
                 }

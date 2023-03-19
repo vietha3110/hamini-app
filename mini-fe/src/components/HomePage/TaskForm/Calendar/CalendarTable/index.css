@@ -1,24 +1,51 @@
 .calendar-table {
     display: flex;
     flex-direction: column;
-    margin: 0px 20px;
+    height: 250px;
+    width: 100%;
 }
 
 .calendar-table-day {
-    display: grid;
-    grid-template-columns: 68px 68px 68px 68px 68px 68px 68px;
-}
-
-.calendar-table-date {
+    width: 100%;
     display: grid;
     grid-template-columns: 60px 60px 60px 60px 60px 60px 60px;
     justify-content: center;
-    gap: 8px;
     align-items:center;
 }
 
-.test {
+.calendar-table-date {
+    width: 100%;
+
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px;
+    justify-content: center;
+    align-items:center;
+    height: 200px;
+    font-size: 13px;
+}
+
+.calendar-div-date {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.calendar-table-currdate > div{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-table-currdate > div:hover {
+    box-shadow:  0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+    background-color: #36d;
+    color: #fff;
+    cursor: pointer;
+}
+
+.calendar-table-prevdate > div, .calendar-table-nextdate {
+    color: rgba(0,0,0,0.2);
 }
