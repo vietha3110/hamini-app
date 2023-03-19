@@ -1,0 +1,24 @@
+.calendar-table {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+}
+
+.calendar-table-day {
+    display: grid;
+    grid-template-columns: 68px 68px 68px 68px 68px 68px 68px;
+}
+
+.calendar-table-date {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px;
+    justify-content: center;
+    gap: 8px;
+    align-items:center;
+}
+
+.test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
