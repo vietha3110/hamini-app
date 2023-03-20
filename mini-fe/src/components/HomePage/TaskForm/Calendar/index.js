@@ -5,6 +5,7 @@ import CalendarTable from './CalendarTable';
 
 const Calendar = () => {
     const [date, setDate] = useState(new Date());
+    const [showToday, setShowToday] = useState(false);
     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const months = ["Jan","Feb","Mar","Apr","May","June","Jul","Aug","Sep","Oct","Nov","Dec"];
     const prevMonth = () => {
@@ -22,11 +23,13 @@ const Calendar = () => {
         month: months[new Date().getMonth()], 
         year: new Date().getFullYear()
     }
+
+    const onClickShowToday = () => {
+        setShowToday(!showToday);
+    }
     return (
         <div className='calendar'>
-            <div>
-                Today is {today.day} {today.month} {today.date} {today.year}
-            </div>
+            
             <CalendarHeader
                 prevMonth={prevMonth}
                 nextMonth={nextMonth}
@@ -35,6 +38,20 @@ const Calendar = () => {
             <CalendarTable
                 date={date}
             />
+            <div className='calendar-today'>
+                {
+                    !showToday && 
+                    <span onClick={onClickShowToday}> Today </span>
+                }
+               
+                {
+                    showToday && 
+                    <div>
+                        Today is {today.day} {today.month} {today.date} {today.year}
+                    </div>
+                }
+                
+            </div>
         </div>
     )
 }

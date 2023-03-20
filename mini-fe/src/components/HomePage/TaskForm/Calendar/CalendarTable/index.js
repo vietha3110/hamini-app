@@ -64,9 +64,7 @@ const CalendarTable = ({date}) => {
                     }
                 </div>
             </div>
-            <div className='calendar-today'>
-                <span> Today </span>
-            </div>
+           
         </>
     )
 }
