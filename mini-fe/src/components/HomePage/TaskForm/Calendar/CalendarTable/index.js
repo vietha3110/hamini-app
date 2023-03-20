@@ -31,37 +31,43 @@ const CalendarTable = ({date}) => {
         nextDate.setDate(nextDate.getDate() + 1);
     }
 
+
     return (
-        <div className='calendar-table'>
-            <div className='calendar-table-day'>
-                {daysOfWeek.map(day => (
-                    <div key={day} className='calendar-div-date'>
-                        <span>{day}</span>
-                    </div>
-                ))}
-            </div>
-            <div className='calendar-table-date'>
-                {daysPrevMonth?.length > 0 && 
-                    daysPrevMonth.map(day => (
-                        <div key={day[1]} className='calendar-table-prevdate calendar-div-date'>
+        <>
+            <div className='calendar-table'>
+                <div className='calendar-table-day'>
+                    {daysOfWeek.map(day => (
+                        <div key={day} className='calendar-div-date'>
+                            <span>{day}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className='calendar-table-date'>
+                    {daysPrevMonth?.length > 0 && 
+                        daysPrevMonth.map(day => (
+                            <div key={day[1]} className={day[0] === 0 ? 'calendar-table-prevdate calendar-div-dateSun':'calendar-table-prevdate calendar-div-date'}>
+                                <div>{day[1]}</div>
+                            </div>
+                        ))
+                    }
+                    {daysInMonth.map(day => (
+                        <div key={day[1]} className={day[0] === 0 ? 'calendar-table-prevdate calendar-div-dateSun':'calendar-table-currdate calendar-div-date'}>
                             <div>{day[1]}</div>
                         </div>
-                    ))
-                }
-                {daysInMonth.map(day => (
-                    <div key={day[1]} className='calendar-table-currdate calendar-div-date'>
-                        <div>{day[1]}</div>
-                    </div>
-                ))}
-                {daysNextMonth?.length > 0 && 
-                    daysNextMonth.map(day => (
-                        <div key={day[1]} className='calendar-table-nextdate calendar-div-date'>
-                            <div>{day[1]}</div>
-                        </div>
-                    ))
-                }
+                    ))}
+                    {daysNextMonth?.length > 0 && 
+                        daysNextMonth.map(day => (
+                            <div key={day[1]} className={day[0] === 0 ? 'calendar-table-prevdate calendar-div-dateSun':'calendar-table-nextdate calendar-div-date'}>
+                                <div>{day[1]}</div>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
-        </div>
+            <div className='calendar-today'>
+                <span> Today </span>
+            </div>
+        </>
     )
 }
 
