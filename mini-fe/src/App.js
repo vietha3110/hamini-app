@@ -4,13 +4,16 @@ import {
   Routes
 } from "react-router-dom";
 import HomePage from './components/HomePage';
-import Navigation from './components/Navigation';
+import Weather from './components/Weather';
+import NavBar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<><Navigation/><HomePage/></>}></Route>
+        <Route path='/' element={<NavBar/>}></Route>
+        <Route path='/todolist' element={<HomePage/>}></Route>
+        <Route path='/weather' element={<Weather/>}></Route>
       </Routes>
     </div>
   );
