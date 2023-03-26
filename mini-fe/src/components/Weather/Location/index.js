@@ -1,8 +1,9 @@
 import { useState } from "react";
-
+import citiesData from "./cities";
 // const API_KEY = "cac24be2c06779e11d09bccf806e250d"
 
-const Location = () => {
+
+const Location = ({open}) => {
     const [location, setLocation] = useState("");
     const [lat, setLat] = useState(0);
     const [lon, setLon] = useState(0);
@@ -20,7 +21,8 @@ const Location = () => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=`)
             .then((res) => res.json())
             .then((data) => {
-               console.log(data)
+                console.log(data)
+                open();
             })
 
         
