@@ -8,7 +8,7 @@ const Location = () => {
     const [lon, setLon] = useState(0);
 
     const onSubmit = () => {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=cac24be2c06779e11d09bccf806e250d`)
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=`)
             .then((res) => res.json())
             .then((data) => {
                 setLat(data[0].lat);
@@ -17,8 +17,7 @@ const Location = () => {
             .catch((err) => {
                 console.log(err);
             })
-        // fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=47.6038321&lon=-122.330062&limit=1&appid=cac24be2c06779e11d09bccf806e250d`)
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=cac24be2c06779e11d09bccf806e250d`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=`)
             .then((res) => res.json())
             .then((data) => {
                console.log(data)
