@@ -4,34 +4,11 @@ import WeatherCard from "./WeatherCard";
 import Location from "./Location";
 const Weather = () => {
     const [showCard, setShowCard] = useState(false);
-
-    // const icons = [
-    //     {
-    //         id: 1, 
-    //         className: "material-symbols-outlined hover:scale-110 cursor-pointer",
-    //         name: "sunny"
-    //     },
-    //     {
-    //         id: 2, 
-    //         className: "material-symbols-outlined hover:scale-110 cursor-pointer",
-    //         name: "air"
-    //     },
-    //     {
-    //         id: 1, 
-    //         className: "material-symbols-outlined hover:scale-110 cursor-pointer",
-    //         name: "rainy"
-    //     },
-    //     {
-    //         id: 1, 
-    //         className: "material-symbols-outlined hover:scale-110 cursor-pointer",
-    //         name: "thunderstorm"
-    //     },
-    //     {
-    //         id: 1, 
-    //         className: "material-symbols-outlined hover:scale-110 cursor-pointer",
-    //         name: "cloudy_snowing"
-    //     }
-    // ]
+    const [location, setLocation] = useState("");
+    const [main, setMain] = useState({});
+    const [sys, setSys] = useState({});
+    const [weather, setWeather] = useState({});
+    const [wind, setWind] = useState({});
 
 
     return (
@@ -42,10 +19,26 @@ const Weather = () => {
                 </h1>
             </div>
             {
-                !showCard && <Location open={()=>setShowCard(true)} />
+                !showCard &&
+                <Location
+                    open={() => setShowCard(true)}
+                    updateLocation={setLocation}
+                    location={location}
+                    setMain={setMain}
+                    setSys={setSys}
+                    setWeather={setWeather}
+                    setWind={setWind}
+                />
             } 
             {
-                showCard && <WeatherCard/>
+                showCard &&
+                <WeatherCard
+                    location={location}
+                    main={main}
+                    sys={sys}
+                    weather={weather}
+                    wind={wind}
+                />
             }
             
         </div>

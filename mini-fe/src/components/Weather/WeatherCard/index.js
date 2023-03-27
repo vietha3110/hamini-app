@@ -1,5 +1,8 @@
-
-const WeatherCard = () => {
+function convertKtoF(temp) {
+    return ((temp - 273.15) * (9 / 15) + 32).toFixed(0);
+}
+const WeatherCard = ({ location, main, sys, weather, wind }) => {
+    const temp = convertKtoF(main.temp);
     return (
         <div className="flex w-full justify-center items-center h-96 ">
             <div className="flex border rounded-md flex-col w-80 h-80 px-2 bg-white text-black">
@@ -10,7 +13,7 @@ const WeatherCard = () => {
                                 location_on
                             </span>
                         </div>
-                        <span>Seattle</span>
+                        <span className="capitalize">{location}</span>
                     </div>
                 </div>
                 <div>
@@ -18,15 +21,23 @@ const WeatherCard = () => {
                         Icon weather rain/sun...
                     </div>
                     <div>
-                        degree
+                        {temp} F
+                        <br />
+                        <p>
+                            Feels like {convertKtoF(main.feels_like)} F
+                        </p>
                         <div>
-                            detail
+                            {weather.description}
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div>humid</div>
-                    <div>wind</div>
+                    <div>
+                        Humidity: {main.humidity}%
+                    </div>
+                    <div>
+                        Wind Speed: {wind.speed} km/h
+                    </div>
                 </div>
             </div>
         </div>
