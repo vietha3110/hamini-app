@@ -45,7 +45,6 @@ const Location = ({open, updateLocation,location, setMain, setSys,setWeather, se
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_KEY}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 setMain(data.main);
                 setWeather(data.weather[0]);
                 setWind(data.wind);
