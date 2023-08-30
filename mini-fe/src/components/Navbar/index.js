@@ -24,7 +24,7 @@ const NavBar = () => {
         },
         {
             id: 5,
-            link: 'cards'
+            link: 'games'
         }
     ];
     return (
